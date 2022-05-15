@@ -34,7 +34,7 @@
 .user__icon{
     font-size: 2rem;
     position: relative;
-    top: 16px;
+    top: -10px;
     left: -120px;
 }
 .form__bxInput {
@@ -47,7 +47,7 @@
 
 .form__bxInput--input {
     position: relative;
-    top: -7px;
+    top: 14px;
     color: var(--negro);
     font-size: 16px;
     outline: 0;
@@ -74,13 +74,16 @@
     -o-transition: transform 200ms, color 200ms;
 }
 
-.form__bxInput--input:focus~.form__bxInput--label,
-.form__bxInput--input:not(:placeholder-shown)~.form__bxInput--label {
+.form__bxInput--input:focus ~ .form__bxInput--label,
+.form__bxInput--input:not(:placeholder-shown) ~ .form__bxInput--label {
     transform: translateY(-20px) translateX(10px) scale(0.9);
     -webkit-transform: translateY(-20px) translateX(10px) scale(0.9);
     -moz-transform: translateY(-20px) translateX(10px) scale(0.9);
     -ms-transform: translateY(-20px) translateX(10px) scale(0.9);
     -o-transform: translateY(-20px) translateX(10px) scale(0.9);
+}
+.form__bxInput--input:focus ~ .user__icon{
+    color: var(--primary-color);
 }
 
 .form__bxInput--input:not(:placeholder-shown)~.form__bxInput--label {
