@@ -1,9 +1,9 @@
 import './MainButton.css'
 
-const MainButton = () => {
+const MainButton = (props) => {
     return (
         <>
-            <button className="mainButton">Sign In</button>
+            <button onClick={props.click} className="mainButton">{props.value}</button>
         </>
     )
 }

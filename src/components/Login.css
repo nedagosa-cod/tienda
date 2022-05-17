@@ -136,8 +136,8 @@
     --color: var(--primary-color);
     font-family: inherit;
     display: inline-block;
-    width: 500px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
     line-height: 2.5em;
     margin: 20px;
     position: relative;
@@ -145,7 +145,6 @@
     border: 2px solid var(--color);
     transition: color .5s;
     z-index: 1;
-    font-size: 1.3rem;
     border-radius: 30px;
     font-weight: 500;
     color: var(--color);
