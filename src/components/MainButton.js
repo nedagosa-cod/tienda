@@ -3,7 +3,7 @@ import './MainButton.css'
 const MainButton = () => {
     return (
         <>
-            <button className="mainButton"> Ingresar</button>
+            <button className="mainButton">Sign In</button>
         </>
     )
 }
