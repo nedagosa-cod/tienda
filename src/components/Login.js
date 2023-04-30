@@ -2,14 +2,12 @@ import './Login.css';
 import imgUser from '../img/user.png';
 import MainButton from './MainButton';
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom'; 
 
 
 const Login = () => {
     const password = useRef();
     const email = useRef();
     const rePassword = useRef();
-    const mainButton = useRef();
     const [showh, setShowh] = useState('hide');
     const [showv, setShowv] = useState();
     const [varUp, setUp] = useState();
@@ -112,7 +110,7 @@ const Login = () => {
                     <i className={`fa-solid fa-eye-slash eye-icon hide`} onClick={showPass}></i>
                 </div>
             </div>
-            <span className={`form__span ${fgPass}`}><a href="#">Forgot Password</a></span>
+            <span className={`form__span ${fgPass}`}><a href="/home">Forgot Password</a></span>
             <MainButton value={btnName} click={obData} />
             <div className='form__sign'>
                 <button className={`form__sign--btn btn__up ${varUp}`} id="up" onClick={buttonPress}>Sign Up</button>
