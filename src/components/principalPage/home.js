@@ -1,10 +1,14 @@
-import {Link} from 'react-router-dom'
+import Product from '../product'
+import Navbar from '../navBar/NavBar'
+import styles from './home.module.css'
 
 const home = () => {
     return (
         <>
-            <h1>Main Page</h1>
-            <Link to="/login">Go Login</Link>
+            <Navbar></Navbar>
+            <main className={styles.container}>
+                <Product></Product>
+            </main>
         </>
     )
 }

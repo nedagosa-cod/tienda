@@ -23,13 +23,14 @@
   margin: 0;
   padding: 0;
   border: 0;
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   vertical-align: baseline;
 }
 /* Se establece 1rem como 10px*/
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 /* Evitamos problemas con las imagenes */
@@ -63,10 +64,6 @@ li {
   list-style-type: none;
 }
 
-/* Configuramos anclas suaves */
-html {
-  scroll-behavior: smooth;
-}
 
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
 h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
