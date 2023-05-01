@@ -1,11 +1,16 @@
 import Navbar from '../navBar/NavBar'
 import styles from './home.module.css'
 import Products from '../products/products'
+import SliderImages from '../carousel/Carousel.js'
 
-const home = () => {
+const Home = () => {
+
     return (
         <>
-            <Navbar></Navbar>
+            <header className={styles.header}>
+                <Navbar></Navbar>
+                <SliderImages />
+            </header>
             <main className={styles.container}>
                 <Products></Products>
             </main>
@@ -13,4 +18,4 @@ const home = () => {
     )
 }
 
-export default home;
+export default Home;
