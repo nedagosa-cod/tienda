@@ -1,22 +1,27 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
-import { Paper, Button } from '@mui/material'
+import { Paper } from '@mui/material'
+import style from './carousel.module.css'
+import carousel_1 from '../../img/carousel_1.png'
+import carousel_2 from '../../img/carousel_2.jpg'
 
 export default function SliderImages(props)
 {
-    var items = [
+    let items = [
         {
             name: "Random Name #1",
-            description: "Probably the most random thing you have ever seen!"
+            description: "Probably the most random thing you have ever seen!",
+            image: carousel_1
         },
         {
             name: "Random Name #2",
-            description: "Hello World!"
+            description: "Hello World!",
+            image: carousel_2
         }
     ]
 
     return (
-        <Carousel >
+        <Carousel className={style.carousel}>
             {
                 items.map( (item, i) => <Item key={i} item={item} /> )
             }
@@ -27,13 +32,10 @@ export default function SliderImages(props)
 function Item(props)
 {
     return (
-        <Paper>
-            <h2>{props.item.name}</h2>
-            <p>{props.item.description}</p>
-
-            <Button className="CheckButton">
-                Check it out!
-            </Button>
+        <Paper >
+            <figure>
+                <img src={props.item.image} alt="carousel"/>
+            </figure>
         </Paper>
     )
 }

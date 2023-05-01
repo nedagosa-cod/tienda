@@ -9,8 +9,9 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ProductIMG from '../img/razer_auri.webp';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { actionTypes } from '../reducer';
+import { useStateValue } from '../stateProvider';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -24,8 +25,9 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function Product(props) {
-  const [expanded, setExpanded] = React.useState(false);
 
+  const [{basket}, dispatch] = useStateValue();
+  const [expanded, setExpanded] = React.useState(false);
   const product = props.producto
 
   const handleExpandClick = () => {
@@ -38,6 +40,21 @@ export default function Product(props) {
     maximumFractionDigits: 0,
     minimumFractionDigits: 0
   });
+
+  const addToBasket = () => {
+    dispatch({
+      type: actionTypes.ADD_TO_BASKET,
+      item: {
+        id: product.id,
+        brand: product.brand,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        rating: product.rating,
+        description: product.description
+      }
+    })
+  }
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -63,8 +80,8 @@ export default function Product(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="Agregar al carrito">
-          <AddShoppingCartIcon fontSize='large'/>
+        <IconButton aria-label="Agregar al carrito" onClick={addToBasket}>
+          <AddShoppingCartIcon fontSize='large' />
         </IconButton>
         {Array(product.rating)
         .fill()

@@ -7,6 +7,21 @@
     height: 60px;
     background: #1e1e1e;
     padding: 8px 16px;
+    font-size: 1.8rem;
+    color: #ececec;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.logolink {
+    width: 60px;
+}
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 .navbar .navbar__uld {
     width: 50%;
