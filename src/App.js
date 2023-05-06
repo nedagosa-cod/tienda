@@ -3,6 +3,8 @@ import SignIn from './components/Login.js';
 import SignUp from "./components/SignUp.js";
 import Home from './components/principalPage/home.js';
 import Shopcar from "./components/shopcar/Shopcar.js";
+import Checkout from "./components/checkOutForm/Checkout.js";
+
 import './style/App.css';
 import './style/index.css';
 import { Routes, Route } from 'react-router-dom';
@@ -36,6 +38,7 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<Home />} />
         <Route path="/shop_car" element={<Shopcar />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer></Footer>
     </div>

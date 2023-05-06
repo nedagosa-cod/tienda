@@ -15,7 +15,6 @@
     font-family: 'Quicksand', sans-serif;
 }
 .logolink {
-
     width: 33%;
 }
 .navlogobx {
@@ -34,8 +33,34 @@
 }
 .navbar .navbar__uld {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    align-items: center;
     font-weight: 800;
     width: 33%;
+}
+.button {
+    background-image: linear-gradient(#c142ec, #c900bf);
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    direction: ltr;
+    display: block;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    min-width: 30px;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
 
+.button:hover {
+    background-image: linear-gradient(#c900bf,#c142ec);
 }

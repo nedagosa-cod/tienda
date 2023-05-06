@@ -50,7 +50,7 @@ const Shopcar = () => {
                                 <span>{currency.format(getBasketTotal(basket))}</span>
                             </div>
                         </div>
-                        <IconButton aria-label="Agregar al carrito" color="inherit">
+                        <IconButton aria-label="Agregar al carrito" color="inherit" href='/checkout'>
                             Realizar Compra
                             <AddShoppingCartIcon fontSize='large' />
                         </IconButton>

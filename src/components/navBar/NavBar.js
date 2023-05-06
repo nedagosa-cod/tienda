@@ -49,7 +49,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/sign" onClick={fnSignOut} xs={{width: 'auto'}}>
+                        <Link to="/sign" onClick={fnSignOut} className={styles.button}>
                             {user ? 'Cerrar Sesión' : 'Iniciar Sesión'}
                         </Link>
                     </li>
