@@ -29,11 +29,11 @@ const Shopcar = () => {
             <div className={style.bx_title}>
                 <h1>CARRITO DE COMPRAS</h1>
             </div>
-            <Box  sx={{ flexGrow: 1, margin: "auto", width: "60%" }}>
+            <Box className={style.firstBox} sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2} className={style.Grid}>
                     {
-                        basket?.map((product) => (
-                            <Grid item xs={12} sm={12} md={12} lg={12} key={product.id}>
+                        basket?.map((product, i) => (
+                            <Grid item xs={12} sm={12} md={12} lg={12} key={i}>
                                 <ProductCar producto={product}></ProductCar>
                             </Grid>
                         ))

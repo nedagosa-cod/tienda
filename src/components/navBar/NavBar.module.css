@@ -1,7 +1,6 @@
 .navbar {
     display: flex;
-    justify-content: space-between;
-    gap: 30%;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     height: 60px;
@@ -16,18 +15,27 @@
     font-family: 'Quicksand', sans-serif;
 }
 .logolink {
-    width: 60px;
+
+    width: 33%;
 }
-.navbar ul{
+.navlogobx {
+    width: 50px;
+}
+.navbar__ull{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+
+    width: 33%;
+}
+.navbar ul li{
+    width: auto;
+    margin: 0 16px;
 }
 .navbar .navbar__uld {
-    width: 50%;
+    display: flex;
+    justify-content: end;
     font-weight: 800;
-}
-.navlogobx {
-    width: 200px;
+    width: 33%;
+
 }

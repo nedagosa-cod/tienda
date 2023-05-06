@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,6 +15,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from './navBar/NavBar';
+import { auth } from '../firebase';
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 
 function Copyright(props) {
@@ -31,6 +35,11 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+
+  const history = useNavigate()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -39,6 +48,20 @@ export default function SignIn() {
       password: data.get('password'),
     });
   };
+
+  const fnSignIn = (e) => {
+
+    e.preventDefault();
+    
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential)=>{
+        history('/')
+        console.log(userCredential)
+      })
+      .catch(err => {
+        alert(err.message)
+      })
+  }
 
   return (
     <ThemeProvider theme={theme}>
@@ -77,6 +100,8 @@ export default function SignIn() {
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1}}>
               <TextField
+                value={email}
+                onChange={e=>{setEmail(e.target.value)}}
                 margin="normal"
                 required
                 fullWidth
@@ -87,6 +112,8 @@ export default function SignIn() {
                 autoFocus
               />
               <TextField
+                value={password}
+                onChange={e=>{setPassword(e.target.value)}}
                 margin="normal"
                 required
                 fullWidth
@@ -101,6 +128,7 @@ export default function SignIn() {
                 label="Remember me"
               />
               <Button
+                onClick={fnSignIn}
                 type="submit"
                 fullWidth
                 variant="contained"

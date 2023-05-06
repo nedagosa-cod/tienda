@@ -5,13 +5,17 @@
     width: 100%;
     color: #ececec;
     font-size: 1.8rem;
+    height: 100vh;
 }
 .bx_title {
     text-align: center;
     width: 100%;
-    margin: 150px 0;
+    height: 0;
     font-size: 5rem;
     color: black;
+}
+.bx_title {
+    margin-top: 120px;
 }
 .Grid {
     display: flex;
@@ -43,4 +47,13 @@
 
 .Button:hover {
     background: rgb(255, 73, 194);
+}
+
+.firstBox {
+    margin: auto;
+    width: 60%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    overflow: auto;
 }

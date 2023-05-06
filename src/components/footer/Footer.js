@@ -8,22 +8,29 @@ const Footer = () => {
     return (
         <>
         <footer className={styles.footer}>
-            <section>
+            <section className={styles.brand_bx}>
                 <h2>Tech Store</h2>
                 <figure>
                     <img src={imgLogo} alt="logo" />
                 </figure>
                 <div>
                     <FontAwesomeIcon icon={faFacebook} />
-                    <FontAwesomeIcon icon={faInstagram} />
+                    <FontAwesomeIcon icon={faInstagram}/>
                     <FontAwesomeIcon icon={faTiktok} />
                     <FontAwesomeIcon icon={faYoutube} />
                 </div>
             </section>
-            <section>
-
+            <section className={styles.brand_bxes}>
+                <div>
+                    <h2>Contacto</h2>
+                    <ul>
+                        <li>Correo: techstore_col@techstore.com</li>
+                        <li>Redes: @techstore_col</li>
+                        <li>WhatsApp: 3123456789</li>
+                    </ul>
+                </div>
             </section>
-            <section>
+            <section className={styles.brand_bxes}>
                 <h2>Titulo</h2>
                 <ul>
                     <li>Política de cambio</li>
