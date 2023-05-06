@@ -7,9 +7,9 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { actionTypes } from '../reducer';
 import { useStateValue } from '../stateProvider';
 
@@ -29,7 +29,7 @@ export default function Product(props) {
   const [{basket}, dispatch] = useStateValue();
   const [expanded, setExpanded] = React.useState(false);
   const product = props.producto
-
+  console.log(basket)
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };

@@ -1,25 +1,27 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import DeleteIcon from '@mui/icons-material/Delete';
+import style from './productcar.module.css'
+import { useStateValue } from '../../../stateProvider';
+import { actionTypes } from '../../../reducer';
 
 
 
 export default function ProductCar(props) {
 
-  const [expanded, setExpanded] = React.useState(false);
+  const [{basket}, dispatch] = useStateValue();
   const product = props.producto
-  console.log('hola',product)
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  console.log(basket)
+
+  const removeItem = () => dispatch({
+    type: actionTypes.REMOVE_ITEM,
+    id: product.id
+  })
 
   const currency = new Intl.NumberFormat('es-CO', {
     currency: 'COP',
@@ -29,39 +31,31 @@ export default function ProductCar(props) {
   });
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        action={
-            <Typography
-                variant='h5'
-                color='textSecondary'
-            >{currency.format(product.price)}</Typography>
-        }
-        title={product.name}
-        subheader={product.brand}
-      />
+    <Card
+      sx={{
+        maxWidth: "90%",
+        margin: "auto",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}
+    >
       <CardMedia
         component="img"
-        sx={{ height: 194, objectFit: 'contain' }}
+        sx={{ height: 60, objectFit: "contain", width: 60 }}
         image={product.image}
         alt={product.brand}
+        
       />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {product.name}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="Agregar al carrito">
-          <AddShoppingCartIcon fontSize='large' />
-        </IconButton>
-        {Array(product.rating)
-        .fill()
-        .map((_, i) => (
-            <p key={i}>&#11088;</p>
-        ))}
-        <IconButton aria-label="Agregar al carrito">
-          <DeleteIcon fontSize='large' />
+    <Typography variant="h5" color="text.secondary">
+        {product.name}
+    </Typography>
+      <CardActions disableSpacing className={style.CardActions}>
+      <Typography variant="h5" color="text.secondary">
+        {currency.format(product.price)}
+      </Typography>
+        <IconButton aria-label="Agregar al carrito" onClick={removeItem}>
+          <DeleteIcon fontSize="large" />
         </IconButton>
       </CardActions>
     </Card>

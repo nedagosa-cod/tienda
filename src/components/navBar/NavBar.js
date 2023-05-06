@@ -6,8 +6,7 @@ import { Badge } from '@mui/material';
 import { useStateValue } from '../../stateProvider';
 
 const Navbar = () => {
-    const [{basket}, dispatch] = useStateValue();
-    console.log(basket?.length)
+    const [{basket}] = useStateValue();
     return (
         <>
             <nav className={styles.navbar}>

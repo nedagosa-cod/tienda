@@ -6,22 +6,55 @@ import Grid from '@mui/material/Grid';
 
 import { useStateValue } from "../../stateProvider";
 import ProductCar from "./productCar/Productcar";
+import IconButton from '@mui/material/IconButton';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
+import { getBasketTotal } from "../../reducer";
+
 
 const Shopcar = () => {
     const [{basket}] = useStateValue();
+
+    const currency = new Intl.NumberFormat('es-CO', {
+        currency: 'COP',
+        style: 'currency',
+        maximumFractionDigits: 0,
+        minimumFractionDigits: 0
+      });
+
     return (
         <>
         <header className={style.header}>
             <Navbar></Navbar>
-            <Box  sx={{ flexGrow: 1 }}>
-                <Grid container spacing={2}>
+            <div className={style.bx_title}>
+                <h1>CARRITO DE COMPRAS</h1>
+            </div>
+            <Box  sx={{ flexGrow: 1, margin: "auto", width: "60%" }}>
+                <Grid container spacing={2} className={style.Grid}>
                     {
                         basket?.map((product) => (
-                            <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
+                            <Grid item xs={12} sm={12} md={12} lg={12} key={product.id}>
                                 <ProductCar producto={product}></ProductCar>
                             </Grid>
                         ))
                     }
+                </Grid>
+            </Box>
+            <Box  sx={{ flexGrow: 1, margin: "auto", width: "40%"  }}>
+                <Grid container spacing={0} className={style.GridVal}>
+                    <Grid item xs={12} sm={12} md={12} lg={12}>
+                        <div>
+                            <p>Cantidad: {basket.length}</p>
+                            <h1>Total Productos</h1>
+                            <div>
+                                <span>{currency.format(getBasketTotal(basket))}</span>
+                            </div>
+                        </div>
+                        <IconButton aria-label="Agregar al carrito" color="inherit">
+                            Realizar Compra
+                            <AddShoppingCartIcon fontSize='large' />
+                        </IconButton>
+                    </Grid>
                 </Grid>
             </Box>
         </header>
