@@ -25,11 +25,11 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function Product(props) {
-
+  // eslint-disable-next-line
   const [{basket}, dispatch] = useStateValue();
   const [expanded, setExpanded] = React.useState(false);
   const product = props.producto
-  console.log(basket)
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };

@@ -17,9 +17,9 @@ import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 
 const App = () => {
+  // eslint-disable-next-line
   const [{user}, dispatch] = useStateValue();
   useEffect(() => {
-    console.log(user)
     onAuthStateChanged(auth, (authUser) => {
       if (authUser.email) {
         dispatch({

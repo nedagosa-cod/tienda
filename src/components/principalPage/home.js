@@ -2,6 +2,7 @@ import Navbar from '../navBar/NavBar'
 import styles from './home.module.css'
 import Products from '../products/products'
 import SliderImages from '../carousel/Carousel.js'
+import TopProduct from '../topProduct/TopProduct.js'
 
 import logoRazer from '../../img/razer logo.png'
 import logoCorsair from '../../img/logo_corsair.png'
@@ -47,6 +48,7 @@ const Home = () => {
                         </Grid>
                     </Box>
                 </section>
+                <TopProduct></TopProduct>
                 <Products></Products>
             </main>
         </>

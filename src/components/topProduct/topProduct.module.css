@@ -1,0 +1,65 @@
+.topProduct_bx {
+    width: 100%;
+    height: 100vh;
+}
+
+.Box{
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+.BigGrid {
+    height: 100vh;
+}
+
+.Box h1 {
+    font-size: 4rem;
+    line-height: 40px;
+}
+
+.Box h2 {
+    font-size: 2.4rem;
+    margin: 12px 0 40px 0;
+    color: #c4c4c4;
+}
+
+.Box p {
+    font-size: 2rem;
+    margin: 40px 0;
+    line-height: 26px;
+}
+
+.Box span {
+    font-size: 3.6rem;
+}
+
+.Grid {
+    display: flex;
+    align-items: center;
+}
+
+.Grid figure {
+    width: 80%;
+}
+
+.Button {
+    color: white;
+    box-shadow: 0 0 0 4px #ff9af2;
+    background: #8b00cc;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.Button:hover {
+    background: #bc2cff;
+}
