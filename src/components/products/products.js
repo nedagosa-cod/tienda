@@ -19,7 +19,7 @@ export default function Products() {
   }, [])
 
   return (
-    <Box  sx={{ flexGrow: 1 }}>
+    <Box  sx={{ flexGrow: 1, padding: '0 80px' }}>
       <Grid container spacing={2}>
         {
           products.map((producto, i) => (
